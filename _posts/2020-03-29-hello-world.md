@@ -1,5 +1,6 @@
 ---
 layout: post
+title: John King, Amateur, Launches Site
 date: 2020-03-29
 ---
 
