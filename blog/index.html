@@ -3,8 +3,11 @@ layout: default
 title: John's Blog
 ---
 <body>
-	<a href="/">Home</a>
 	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/blog">Blog</a></li>
+	</ul>
 	<ul class="posts">
 
 	  {% for post in site.posts %}
