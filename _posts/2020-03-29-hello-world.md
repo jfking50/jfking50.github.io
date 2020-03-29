@@ -1,6 +1,5 @@
 ---
 layout: post
-title: "John King, Fledgling Analyst, Launches Site"
 date: 2020-03-29
 ---
 
