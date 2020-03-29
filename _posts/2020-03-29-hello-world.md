@@ -15,3 +15,10 @@ Numbered lists.
 1. This is number 1.
 2. This is number 2.
 3. And so on.
+
+- Bullet
+
+R Code
+``` r
+print("Hello from R")
+```
