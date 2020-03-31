@@ -22,3 +22,6 @@ R Code
 ``` r
 print("Hello from R")
 ```
+Math hack
+
+<img src="https://render.githubusercontent.com/render/math?math=E=mc^{2}">
