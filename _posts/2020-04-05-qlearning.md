@@ -1,7 +1,5 @@
 ---
 title: Q-Learning
-categories:
-  - Blog
 tags:
   - Python
   - AI
