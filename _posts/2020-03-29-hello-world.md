@@ -1,10 +1,10 @@
 ---
-layout: post
+layout: single
 title: John King, Amateur, Launches Site
-date: 2020-03-29
+classes: wide
 ---
 
-And here it is in all its simplicity. I'll try a few things.
+And here it is! I'll try a few things.
 
 # Heading 1
 And some text.
