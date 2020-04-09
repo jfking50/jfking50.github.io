@@ -244,7 +244,7 @@ show(p)
 
 
 
-![](qlearn_plot.png)
+![](/assets/images/qlearn_plot.png)
 
 Anyone who has played tic-tac-toe more than a few times learns that the best opening move is to play in the center of the board. I was curious of the Q-leaning algorithm picked this up, so I looked up the Q-values for an empty board. The fifth value listed represents the center of the board, and it is in fact the greatest Q-value. Pretty cool!
 
