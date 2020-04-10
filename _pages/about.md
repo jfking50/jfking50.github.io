@@ -3,6 +3,21 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+### Places I Learned Stuff
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+B.A., German (Math minor), Willamette University, 1991
+B.S., Geology, Portland State University, 1993
+M.S., Geology, Portland State University, 1994
+M.S., Operations Research, Naval Postgraduate School, 2018
+
+### Places I Went To
+
+![If it's blue, I went there](/assets/images/about/places_visited.png)
+
+### Some Beer I Drank in Europe
+
+![Not all of them - just the unique ones](/assets/images/about/beer.png)
+
+### Things I Wrote That Got Published
+
+Gotta track these down again.
