@@ -15,13 +15,13 @@ M.S., Operations Research, Naval Postgraduate School, 2018
 
 ### Places I Went To
 
-If it's blue, I went there
+If it's blue, I went there.
 
 ![](/assets/images/about/places_visited.png)
 
 ### Some Beer I Drank in Europe
 
-Not all of them - just the unique ones
+Not all of them - just the unique ones.
 
 ![](/assets/images/about/beer.jpg)
 
