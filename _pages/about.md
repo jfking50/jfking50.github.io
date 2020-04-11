@@ -3,28 +3,27 @@ permalink: /about/
 title: "About"
 ---
 
-### Places I Learned Stuff
+### Stuff I Got Degrees In
 
-B.A., German (Math minor), Willamette University, 1991
+* B.A., German/Math, Willamette University, Oregon
+* B.S., Geology, Portland State University, Oregon
+* M.S., Geology, Portland State University, Oregon
+* M.S., Operations Research, Naval Postgraduate School, California
 
-B.S., Geology, Portland State University, 1993
+### Stuff I Wrote A Lot Of Words About
 
-M.S., Geology, Portland State University, 1994
+* King, John Frederick, "Magmatic Evolution and Eruptive History of the Granitic Bumping Lake Pluton, Washington: Source of the Bumping River and Cash Prairie Tuffs" (1994). <a href="https://archives.pdx.edu/ds/psu/27883">Dissertations and Theses. Paper 4765.</a>
 
-M.S., Operations Research, Naval Postgraduate School, 2018
+* King, John, Major, U.S. Army, "An Implementation of Designed Experiments in Combat XXI", M.S. in Operations Research, June, 2018 (RESTRICTED)
 
-### Places I Went To
+### Travelling Stuff I've Done
 
-If it's blue, I went there.
+If it's blue, I did stuff there.
 
 ![](/assets/images/about/places_visited.png)
 
-### Some Beer I Drank in Europe
+### Stuff I Enjoyed In Europe
 
-Not all of them - just the unique ones.
+(Just some of the stuff)
 
 ![](/assets/images/about/beer.jpg)
-
-### Things I Wrote That Got Published
-
-Gotta track these down again...
