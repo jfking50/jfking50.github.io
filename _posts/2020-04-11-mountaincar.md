@@ -19,7 +19,7 @@ There are two Mountain Car environments: one with a discrete number of actions, 
 
 >A car is on a one-dimensional track, positioned between two "mountains". The goal is to drive up the mountain on the right; however, the car's engine is not strong enough to scale the mountain in a single pass. Therefore, the only way to succeed is to drive back and forth to build up momentum.
 
-![](/assets/images/mountaincar/mc.png)
+<img src="https://jfking50.github.io/assets/images/mountaincar/mc.png" style="width:300px;height:200px;">
 
 One of the nice things about working with Gym environments is that I don't have to put effort into defining my own environment like I did with tic-tac-toe. All I have to do to create the mountain car environment is `gym.make('MountainCar-v0')`. It's that easy! I need to get some information about the **state space and actions** so I know what I'm dealing with. First the state space.
 
@@ -31,7 +31,7 @@ print(env.observation_space)
 ```
 
     Box(2,)
-    
+
 
 `Box` means that it's a continuous state space, and the `2` means there are two numbers that represent the space. Going back to the documentation, the state represents the position and velocity of the car. I can get their upper and lower bounds this way:
 
@@ -41,7 +41,7 @@ print(env.observation_space.high)
 ```
 
     [0.6  0.07]
-    
+
 
 
 ```python
@@ -49,7 +49,7 @@ print(env.observation_space.low)
 ```
 
     [-1.2  -0.07]
-    
+
 
 So the car's position can be between -1.2 and 0.6, and the velocity can be between -0.07 and 0.07. The documentation states that an episode ends the car reaches 0.5 position, or if 200 iterations are reached. That means the position value is the x-axis with positive values to the right, and that a positive velocity means the car is moving to the right. The documentation also says that the starting state is a random position from -0.6 to -0.4 with no velocity, so I start at the bottom of the value at a stand still. Makes sense. What do I have for actions?
 
@@ -59,11 +59,11 @@ print(env.action_space)
 ```
 
     Discrete(3)
-    
+
 
 Three possible actions. 0 means push left, 1 means do nothing (not sure why you'd ever do that), and 2 means push right.
 
-Last thing I need is how the **rewards** work. They say you get "-1 for each time step until the goal position of 0.5 is reached". So there's no positive reward? Huh. They also say "there is no penalty for climbing the left hill, which upon reached acts as a wall". I guess that means I can bounce my car off it. 
+Last thing I need is how the **rewards** work. They say you get "-1 for each time step until the goal position of 0.5 is reached". So there's no positive reward? Huh. They also say "there is no penalty for climbing the left hill, which upon reached acts as a wall". I guess that means I can bounce my car off it.
 
 To **interact with the environment**, I first need to reset it with `env.reset()`. This gives me the car's starting state. Then I need an action. I can get a random action from the environment with `env.action_space.sample()`, or I could just use `numpy` to generate a random number. Anyway, then to execute that action in the environment, I use `env.step(action)`. This returns the next observation based on that action, the reward (always -1), whether the episode is over, and some empty information. Also according to the docs, I should close the environment when I'm done with it. Here I'll take 5 random actions to see what things look like.
 
@@ -90,7 +90,7 @@ env.close()
     step results: [-5.44845316e-01 -4.28890428e-04] -1.0 False {}
     action: 0
     step results: [-0.54611497 -0.00126965] -1.0 False {}
-    
+
 
 Ok, got it. I'll import a bunch of stuff and then get to solving this thing with a DQN agent.
 
@@ -121,13 +121,13 @@ except ImportError:
 
 ## DQN Agent
 
-If you read my last post on <a href="https://jfking50.github.io/dqn-ttt/">Deep Q-Networks</a>, a lot of this will look familiar. I'm only going to explain what's different, so you might want to go back and read it. 
+If you read my last post on <a href="https://jfking50.github.io/dqn-ttt/">Deep Q-Networks</a>, a lot of this will look familiar. I'm only going to explain what's different, so you might want to go back and read it.
 
 **`build_model`**: The only thing I changed here was to reduce the number of nodes in the two hidden layers. Since there are only two values that represent the state and only three actions, 32 nodes seemed plenty.
 
 **`add_memory`**: This is completely new. What I'm doing here is storing information about every step (an "experience") to create what's referred to as a replay memory. In the `__init__` function, I create a deque of length 2000 for this purpose. This function simply adds an experience to the replay memory. Since it's a deque, once it contains 2000 items, adding a new item to the top of the queue will cause the oldest item to be removed.
 
-**`sample_experiences`**: This is also new and is part of the replay memory implementation. This function is called only after the replay memory deque is full. Here I randomly sample 64 experiences (defined by `batch_size`) from the replay memory. According to <a href="https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646">Aurélien Géron</a>, 
+**`sample_experiences`**: This is also new and is part of the replay memory implementation. This function is called only after the replay memory deque is full. Here I randomly sample 64 experiences (defined by `batch_size`) from the replay memory. According to <a href="https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646">Aurélien Géron</a>,
 
 >This helps reduce the correlations between the experiences in a training batch, which tremendously helps training.
 
@@ -136,7 +136,7 @@ If you read my last post on <a href="https://jfking50.github.io/dqn-ttt/">Deep Q
 
 ```python
 class DQNagent:
-    
+
     def __init__(self, state_size, action_size, episodes):
         self.gamma = 0.95
         self.batch_size = 64
@@ -154,10 +154,10 @@ class DQNagent:
             tf.keras.layers.Dense(self.action_size)
         ])
         return model
-    
+
     def add_memory(self, state, action, reward, next_state, done):
         self.replay_memory.append((state, action, reward, next_state, done))
-    
+
     def sample_experiences(self):
         indices = np.random.randint(len(self.replay_memory), size=self.batch_size)
         batch = [self.replay_memory[index] for index in indices]
@@ -183,7 +183,7 @@ class DQNagent:
 
 ## Let The Training Begin
 
-This problem kicked my butt for quite a while. I *could not* get that stupid car up the hill! It seemed so simple, but I was stumped. I actually solved this early on with a simple hard-coded policy: if the car is moving left (a negative velocity), push left. Otherwise, push right. Done. Didn't even need a neural net, q-learning, or anything. So why bother with solving this with reinforcement learning? I guess in the real world, I wouldn't, but the point here is to see if I can train a neural net (NN) to learn that policy. 
+This problem kicked my butt for quite a while. I *could not* get that stupid car up the hill! It seemed so simple, but I was stumped. I actually solved this early on with a simple hard-coded policy: if the car is moving left (a negative velocity), push left. Otherwise, push right. Done. Didn't even need a neural net, q-learning, or anything. So why bother with solving this with reinforcement learning? I guess in the real world, I wouldn't, but the point here is to see if I can train a neural net (NN) to learn that policy.
 
 ### I Tried A Lot Of Things That Didn't Work
 
@@ -191,11 +191,11 @@ First, I left everything as is, and just fed experiences to the NN hoping it wou
 
 Then I started thinking about the reward system. It seemed like I needed to give the NN some positive reward to encourage it along. I tried giving a small positive reward if the car made it some distance away from the range of possible starting points. That ended up teaching the NN to drive up and down the same side of the hill over and over. Clearly, the statement, "the only way to succeed is to drive back and forth to build up momentum" is correct, but how do I do that? I tried a one-time positive reward on one side of the hill and only gave additional rewards if the car then tried going up the other side of the hill. That didn't work, either. I tried giving a huge reward if the car ever made it to the goal position, hoping that would back-propogate quickly through the NN weights. Still nope.
 
-It seemed like this reward system I was creating was getting a lot more complicated that it should need to be, so then I tried all of the above while at the same time adjusting the tuning parameters: learning rate, discount rate, and epsilon. No luck. I tried fiddling with how the NN was constructed: number of hidden layers, nodes, etc. Nope. I also tried changing the replay memory batch size. I even took memory replay completely out of the algorithm thinking that maybe that rare time the car made it to the goal kept getting missed in the random draw from the memory replay. Nope again. 
+It seemed like this reward system I was creating was getting a lot more complicated that it should need to be, so then I tried all of the above while at the same time adjusting the tuning parameters: learning rate, discount rate, and epsilon. No luck. I tried fiddling with how the NN was constructed: number of hidden layers, nodes, etc. Nope. I also tried changing the replay memory batch size. I even took memory replay completely out of the algorithm thinking that maybe that rare time the car made it to the goal kept getting missed in the random draw from the memory replay. Nope again.
 
 ### What Did Work
 
-It dawned on me that maybe I should just come up with a reward system that mimiced the hard-coded policy I described earlier. Finally, that worked! In the code below, you'll see: 
+It dawned on me that maybe I should just come up with a reward system that mimiced the hard-coded policy I described earlier. Finally, that worked! In the code below, you'll see:
 
 * `if next_state[0] - state[0] > 0 and action == 2: reward = 1` moving right and pushing right = a reward
 * `if next_state[0] - state[0] < 0 and action == 0: reward = 1` moving left and pushing left = a reward
@@ -240,14 +240,14 @@ env.close()
 ```
 
     Episode: 51, Best Score: 199, eps: 0.894WARNING:tensorflow:Layer dense is casting an input tensor from dtype float64 to the layer's dtype of float32, which is new behavior in TensorFlow 2.  The layer has dtype float32 because it's dtype defaults to floatx.
-    
+
     If you intended to run this layer in float32, you can safely ignore this warning. If in doubt, this warning is likely only an issue if you are porting a TensorFlow 1.X model to TensorFlow 2.
-    
+
     To change all layers to have dtype float64 by default, call `tf.keras.backend.set_floatx('float64')`. To change just this layer, pass dtype='float64' to the layer constructor. If you are the author of this layer, you can disable autocasting by passing autocast=False to the base Layer constructor.
-    
+
     Episode: 599, Best Score: 90, eps: 0.0100
 
-In this figure, you can see that it took about 330 episodes for the car to reach the goal for the first time. As training progressed, the score improved for a short time but then went back to 200. That happened a number of times, too, but the depth of the valleys seems to be trending downward, so that's good. This is what Aurélien Géron describes as "catastrophic forgetting", which makes me laugh but describes it perfectly. 
+In this figure, you can see that it took about 330 episodes for the car to reach the goal for the first time. As training progressed, the score improved for a short time but then went back to 200. That happened a number of times, too, but the depth of the valleys seems to be trending downward, so that's good. This is what Aurélien Géron describes as "catastrophic forgetting", which makes me laugh but describes it perfectly.
 
 According to the documentation for this environment, MountainCar-v0 is considered "solved" when the agent obtains an average reward of at least -110.0 over 100 consecutive episodes. That would translate into a score of 90 or less over 100 episodes. My best score was 90, and I doubt the NN held it long, so there's still work to do. I'll go with what I have for now and demonstrate how the NN does visually.
 
@@ -261,7 +261,7 @@ plt.show()
 ```
 
 
-![png](output_16_0.png)
+![png](/assets/images/mountaincar/output_16_0.png)
 
 
 I swiped these functions from Aurélien Géron's book to render the interaction with the environment in a Jupyter Notebook. Why re-invent the wheel?
