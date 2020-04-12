@@ -249,7 +249,7 @@ env.close()
 
 In this figure, you can see that it took about 330 episodes for the car to reach the goal for the first time. As training progressed, the score improved for a short time but then went back to 200. That happened a number of times, too, but the depth of the valleys seems to be trending downward, so that's good. This is what Aurélien Géron describes as "catastrophic forgetting", which makes me laugh but describes it perfectly.
 
-According to the documentation for this environment, MountainCar-v0 is considered "solved" when the agent obtains an average reward of at least -110.0 over 100 consecutive episodes. That would translate into a score of 90 or less over 100 episodes. My best score was 90, and I doubt the NN held it long, so there's still work to do. I'll go with what I have for now and demonstrate how the NN does visually.
+According to the documentation for this environment, MountainCar-v0 is considered "solved" when the agent obtains an average reward of at least -110.0 over 100 consecutive episodes. That would translate into a score of 110 or less over 100 episodes. My best score was 90, and I doubt the NN held it long, so there's still work to do. I'll go with what I have for now and demonstrate how the NN does visually.
 
 
 ```python
