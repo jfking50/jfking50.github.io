@@ -19,7 +19,7 @@ There are two Mountain Car environments: one with a discrete number of actions, 
 
 >A car is on a one-dimensional track, positioned between two "mountains". The goal is to drive up the mountain on the right; however, the car's engine is not strong enough to scale the mountain in a single pass. Therefore, the only way to succeed is to drive back and forth to build up momentum.
 
-![](/assets/images/mountaincar/mc.png)
+<img src="https://jfking50.github.io/assets/images/mountaincar/mc.png" style="width:300px;height:200px;">
 
 One of the nice things about working with Gym environments is that I don't have to put effort into defining my own environment like I did with tic-tac-toe. All I have to do to create the mountain car environment is `gym.make('MountainCar-v0')`. It's that easy! I need to get some information about the **state space and actions** so I know what I'm dealing with. First the state space.
 
