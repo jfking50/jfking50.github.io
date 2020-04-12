@@ -19,7 +19,7 @@ There are two Mountain Car environments: one with a discrete number of actions, 
 
 >A car is on a one-dimensional track, positioned between two "mountains". The goal is to drive up the mountain on the right; however, the car's engine is not strong enough to scale the mountain in a single pass. Therefore, the only way to succeed is to drive back and forth to build up momentum.
 
-<img src="https://jfking50.github.io/assets/images/mountaincar/mc.png" style="width:300px;height:200px;">
+![](/assets/images/mountaincar/mc.png)
 
 One of the nice things about working with Gym environments is that I don't have to put effort into defining my own environment like I did with tic-tac-toe. All I have to do to create the mountain car environment is `gym.make('MountainCar-v0')`. It's that easy! I need to get some information about the **state space and actions** so I know what I'm dealing with. First the state space.
 
@@ -79,17 +79,17 @@ for t in range(5):
 env.close()
 ```
 
-    observation: [-0.54123462  0.        ]
-    action: 0
-    step results: [-0.54210242 -0.00086779] -1.0 False {}
-    action: 1
-    step results: [-0.5428315  -0.00072909] -1.0 False {}
-    action: 0
-    step results: [-0.54441643 -0.00158492] -1.0 False {}
+    observation: [-0.44439613  0.        ]
     action: 2
-    step results: [-5.44845316e-01 -4.28890428e-04] -1.0 False {}
+    step results: [-4.43984578e-01  4.11553896e-04] -1.0 False {}
+    action: 1
+    step results: [-4.4416447e-01 -1.7989169e-04] -1.0 False {}
     action: 0
-    step results: [-0.54611497 -0.00126965] -1.0 False {}
+    step results: [-0.4459345  -0.00177003] -1.0 False {}
+    action: 1
+    step results: [-0.44828175 -0.00234725] -1.0 False {}
+    action: 2
+    step results: [-0.45018908 -0.00190734] -1.0 False {}
 
 
 Ok, got it. I'll import a bunch of stuff and then get to solving this thing with a DQN agent.
@@ -245,11 +245,11 @@ env.close()
 
     To change all layers to have dtype float64 by default, call `tf.keras.backend.set_floatx('float64')`. To change just this layer, pass dtype='float64' to the layer constructor. If you are the author of this layer, you can disable autocasting by passing autocast=False to the base Layer constructor.
 
-    Episode: 599, Best Score: 90, eps: 0.0100
+    Episode: 599, Best Score: 82, eps: 0.0103
 
-In this figure, you can see that it took about 330 episodes for the car to reach the goal for the first time. As training progressed, the score improved for a short time but then went back to 200. That happened a number of times, too, but the depth of the valleys seems to be trending downward, so that's good. This is what Aurélien Géron describes as "catastrophic forgetting", which makes me laugh but describes it perfectly.
+In this figure, you can see that it took about 330 episodes for the car to reach the goal for the first time. As training progressed, the score improved for a short time but then went back to 200. That happened a number of times, too. This is what Aurélien Géron describes as "catastrophic forgetting", which makes me laugh but describes it perfectly.
 
-According to the documentation for this environment, MountainCar-v0 is considered "solved" when the agent obtains an average reward of at least -110.0 over 100 consecutive episodes. That would translate into a score of 110 or less over 100 episodes. My best score was 90, and I doubt the NN held it long, so there's still work to do. I'll go with what I have for now and demonstrate how the NN does visually.
+According to the documentation for this environment, MountainCar-v0 is considered "solved" when the agent obtains an average reward of at least -110.0 over 100 consecutive episodes. That would translate into a score of 110 or less over 100 episodes. The best score here was 82, and looking at the graph, the NN didn't maintain anything less than 200 very long, so there's still work to do. I'll go with what I have for now and demonstrate how the NN does visually.
 
 
 ```python
@@ -7950,4 +7950,64 @@ gEgCBkAkAQMgkoABEEnAAIgkYABEEjAAIv0Lsn5qFx3nFqgAAAAASUVORK5CYII=\
 
 
 
-So that's the gist of things. Now I need to go back and try to officially solve the environment. I'll start with just training for more episodes, and I'll tweak the tuning parameters a bit. If that doesn't do it, I'll give a Dueling Deep Q-Network a try, and then a Double Dueling Deep Q-Network. That's for another post though.
+Now I'll train for 2000 episodes and see how things look.
+
+
+```python
+best_score = 200
+episodes = 2000
+env = gym.make('MountainCar-v0')
+state_size = env.observation_space.shape[0]
+action_size = env.action_space.n
+agent = DQNagent(state_size, action_size, episodes)
+model = agent.build_model()
+rewards = []
+
+for episode in range(episodes):
+    state = env.reset()    
+    for step in range(200):
+        epsilon = max(1 - episode/(episodes*0.8), 0.01)
+        if np.random.rand() < epsilon: action = np.random.randint(action_size)
+        else: action = np.argmax(model.predict(state[np.newaxis])[0])
+        next_state, reward, done, info = env.step(action)
+        if next_state[0] - state[0] > 0 and action == 2: reward = 1
+        if next_state[0] - state[0] < 0 and action == 0: reward = 1        
+        agent.add_memory(state, action, reward, next_state, done)
+        state = next_state.copy()
+        if done:
+            break
+    rewards.append(step)
+    if step < best_score:
+        best_weights = model.get_weights()
+        best_score = step
+    print("\rEpisode: {}, Best Score: {}, eps: {:.3f}".format(episode, best_score, epsilon), end="")
+    if episode > 50:
+        agent.train_model(model)
+
+model.set_weights(best_weights)
+
+env.close()
+```
+
+    Episode: 51, Best Score: 199, eps: 0.968WARNING:tensorflow:Layer dense is casting an input tensor from dtype float64 to the layer's dtype of float32, which is new behavior in TensorFlow 2.  The layer has dtype float32 because it's dtype defaults to floatx.
+
+    If you intended to run this layer in float32, you can safely ignore this warning. If in doubt, this warning is likely only an issue if you are porting a TensorFlow 1.X model to TensorFlow 2.
+
+    To change all layers to have dtype float64 by default, call `tf.keras.backend.set_floatx('float64')`. To change just this layer, pass dtype='float64' to the layer constructor. If you are the author of this layer, you can disable autocasting by passing autocast=False to the base Layer constructor.
+
+    Episode: 1999, Best Score: 107, eps: 0.010
+
+
+```python
+plt.figure(figsize=(8, 4))
+plt.plot(rewards)
+plt.xlabel("Episode", fontsize=14)
+plt.ylabel("Score", fontsize=14)
+plt.show()
+```
+
+
+![png](/assets/images/mountaincar/output_23_0.png)
+
+
+This is much better than the previous results! The NN held a sub-200 score for quite a few episodes towards the end of training. However, the best score was only 107, so there's still more work to do to maintain sub 110 for 100 episodes. There is no incentive for reaching to goal quickly, so maybe I can get better results by adding a large reward for finishing in fewer than 110 steps. The problem with that approach is that training is conducted on a random sampling of 64 experiences out of the 2000 that are in the replay memory deque. Sub-110 scores are rare, so the chances of that reward making it into the training set is remote. Probably a better approach is to improve the NN performance so that sub-110 scores are more common. That might be possible by playing around with tuning parameters or maybe switching to a different type of reinforement learning method like a Dueling Deep Q-Network or a Double Dueling Deep Q-Network. That's for another post, though.
