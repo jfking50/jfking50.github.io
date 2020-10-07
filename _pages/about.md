@@ -21,9 +21,3 @@ title: "About"
 If it's blue, I did stuff there.
 
 ![](/assets/images/about/places_visited.png)
-
-### Stuff I Enjoyed In Europe
-
-(Just some of the stuff)
-
-![](/assets/images/about/beer.jpg)
