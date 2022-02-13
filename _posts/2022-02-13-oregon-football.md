@@ -15,7 +15,7 @@ classes: wide
 
 I'm not a huge football fan. I can't even remember the last time I watched an NFL game. However, I do sort of follow college football. And being from Oregon, I root for whatever team from Oregon is playing. Sorry Beaver fans, but for quite a few years the Ducks have given me more to root for. The departure of Oregon's head coach Mario Cristobal at the end of the 2021 season... Well, almost the end. He bolted before Oregon's bowl game. Anyway, the whole season got me thinking about changes in college football over the years. It seemed like there were a lot of coaches that moved around. It also seemed like there were a lot more players that entered the transfer portal. Well, time to get some data and find some answers.
 
-After some poking around, I found what looked like a great source for college football data at <http://collegefootballdata.com>. The offer a free API, too, which piqued my interest. I haven't done anything with an API since grad school, so this was a good opportunity to re-learn forgotten skills. So. What to look into first?
+After some poking around, I found what looked like a great source for college football data at <http://collegefootballdata.com>. They offer a free API, too, which piqued my interest. I haven't done anything with an API since grad school, so this was a good opportunity to re-learn forgotten skills. So. What to look into first?
 
 ## Oregon's Quarterback
 
@@ -37,7 +37,7 @@ pac12 <- httr::GET(
 )
 ```
 
-Great! So What do I do with this thing? Well, I can check to see if I got an error or not from my request.
+Great! So what do I do with this thing? Well, I can check to see if I got an error or not from my request.
 
 
 ```r
@@ -660,7 +660,7 @@ tibble(data = content(rec, "parsed")) %>%
 
 ![](/assets/images/or_football/unnamed-chunk-26-1.png)<!-- -->
 
-If you're a Ducks fan, that chart should make you happy. Mike Bellotti was a little shaky early on but got things off to a nice start. Chip Kelly was really consistent and above the overall trend. The fact that the Duck's did so well nationally during his time given his recruit ratings were less than 0.9 suggests he was able to make the most of the available talent. Things dropped off a bit with Mark Helfrich, and then there's Willie Taggart's one hit wonder. Mario got things back on track, and Dan Lanning's is certainly off to a great start.
+If you're a Ducks fan, that chart should make you happy. Mike Bellotti was a little shaky early on but got things off to a nice start. Chip Kelly was really consistent and above the overall trend. The fact that the Ducks did so well nationally during his time given his recruit ratings were less than 0.9 suggests he was able to make the most of the available talent. Things dropped off a bit with Mark Helfrich, and then there's Willie Taggart's one hit wonder. Mario got things back on track, and Dan Lanning is certainly off to a great start.
 
 Ok, so that's Oregon. It would be interesting to see how Oregon does compared to the rest of the teams. But instead of just a comparison of all the teams' ratings, the observation about Chip Kelly getting a lot of bang for the buck gave me an idea. How about a chart that, for a given year, has the recruit ratings on one axis and a team's win record on the other? That ought to highlight those teams that over and under perform given the talent on their roster.
 
