@@ -1,10 +1,16 @@
 ---
-title: "Plotly & Markdown"
-author: "John King"
-date: "2/18/2022"
-output:
-  html_document:
-    keep_md: true
+title: "Plotly & MArkdown"
+tags:
+  - R
+  - API
+  - Data Visualization
+  - College Football
+  - ggplot2
+  - plotly
+  - markdown
+  - GitHub Pages
+layout: single
+classes: wide
 ---
 
 
