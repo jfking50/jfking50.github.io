@@ -193,7 +193,7 @@ htmlwidgets::saveWidget(
   widget = p,
   file = "p1.html",
   selfcontained = F,
-  libdir = "assets/images/plotly-markdown/lib")
+  libdir = "/assets/images/plotly-markdown/lib")
 ```
 
 Finally, in a markdown portion of the file (not a code chunk), I can use this to render the plot:
