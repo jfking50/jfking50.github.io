@@ -1,5 +1,5 @@
 ---
-title: "Plotly & MArkdown"
+title: "Plotly & Markdown"
 tags:
   - R
   - API
