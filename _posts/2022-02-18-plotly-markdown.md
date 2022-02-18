@@ -196,13 +196,9 @@ htmlwidgets::saveWidget(
   libdir = "assets/images/plotly-markdown/lib")
 ```
 
-```
-## Warning: Ignoring 1 observations
-```
-
 Finally, in a markdown portion of the file (not a code chunk), I can use this to render the plot:
 
 ```
-<iframe src="/assets/images/srs/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
+<iframe src="/assets/images/plotly-markdown/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
 ```
-<iframe src="/assets/images/srs/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
+<iframe src="/assets/images/plotly-markdown/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
