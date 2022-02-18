@@ -133,7 +133,7 @@ games_long %>%
        y = "Against the Spread")
 ```
 
-![](assets/images/plotly-markdown/unnamed-chunk-2-1.png)<!-- -->
+![](/assets/images/plotly-markdown/unnamed-chunk-2-1.png)<!-- -->
 
 To create the plot in `plotly`, I first created `imgs()`, which is a list of lists that will go in the `layout()` function. I'm sure there's a slick way of doing this without a for loop, but this will get the job done.
 
@@ -203,6 +203,6 @@ htmlwidgets::saveWidget(
 Finally, in a markdown portion of the file (not a code chunk), I can use this to render the plot:
 
 ```
-<iframe src="assets/images/srs/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
+<iframe src="/assets/images/srs/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
 ```
-<iframe src="assets/images/srs/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
+<iframe src="/assets/images/srs/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
