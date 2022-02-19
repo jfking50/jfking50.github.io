@@ -95,7 +95,7 @@ tag_archive:
   type: liquid
   path: /tags/
 
-repository: jfking50/jfking50.githib.io
+repository: jfking50/jfking50.github.io
 
 comments:
   provider: "utterances"
