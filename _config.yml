@@ -94,3 +94,12 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+repository: jfking50/jfking50.githib.io
+
+comments:
+  provider: "utterances"
+  utterances:
+    theme: "github-light" # "github-dark"
+    issue_term: "pathname"
+    label: "comment"
