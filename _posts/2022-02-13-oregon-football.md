@@ -32,7 +32,7 @@ library(httr)
 pac12 <- httr::GET(
   url = "https://api.collegefootballdata.com/games/players?year=2021&seasonType=regular&conference=PAC",
   httr::add_headers(
-    Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))
+    Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))
   )
 )
 ```
@@ -437,7 +437,7 @@ for (yr in 2021:2022){
   portal <- httr::GET(
     url = paste0("https://api.collegefootballdata.com/player/portal?year=", yr),
     httr::add_headers(
-      Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))
+      Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))
     )
   )
   pp <- tibble(data = content(portal, "parsed"))
@@ -633,7 +633,7 @@ Mario Cristobal is regarded as a great recruiter, which got me thinking. Since I
 rec <- httr::GET(
   url = "https://api.collegefootballdata.com/recruiting/players?classification=HighSchool&team=Oregon",
   httr::add_headers(
-    Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))
+    Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))
   )
 )
 
@@ -677,7 +677,7 @@ roster <-
     url = paste0("https://api.collegefootballdata.com/roster?year=2021"),
     httr::add_headers(
       accept = "application/json",
-      Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))
+      Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))
     )
   )
 
@@ -703,7 +703,7 @@ for (yr in year){
         url = paste0("https://api.collegefootballdata.com/recruiting/players?classification=",
                      rs, "&year=", yr),
         httr::add_headers(
-          Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))
+          Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))
         )
       )
     recruits <- tibble(data = content(recruiting, "parsed"))
@@ -736,7 +736,7 @@ fbs <-
     url = paste0("https://api.collegefootballdata.com/teams/fbs?year=2021"),
     httr::add_headers(
       accept = "application/json",
-      Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))
+      Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))
     )
   )
 fbs_teams <-
@@ -763,7 +763,7 @@ records <- httr::GET(
   url = "https://api.collegefootballdata.com/records?year=2021",
   httr::add_headers(
     accept = "application/json",
-    Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))
+    Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))
   )
 )
 
