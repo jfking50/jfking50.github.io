@@ -48,7 +48,7 @@ bet_lines <-
   httr::GET(
     url = paste0("https://api.collegefootballdata.com/lines?year=2021"),
     httr::add_headers(
-      Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))))
+      Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))))
 
 games <- httr::content(bet_lines, "parsed") %>% spread_all
 
@@ -57,7 +57,7 @@ fbs <-
   httr::GET(
     url = "https://api.collegefootballdata.com/teams/fbs?year=2021",
     httr::add_headers(
-      Authorization = paste("Bearer", Sys.getenv("CFDB_API_TOKEN"))))
+      Authorization = paste("Bearer", Sys.getenv("YOUR_API_TOKEN"))))
 
 fbs_teams <-
   httr::content(fbs, "parsed") %>%
