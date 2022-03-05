@@ -21,7 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   meant to be more of a repository of useful tidbids of code more than anything
   else.
 github_username: jfking50
-minimal_mistakes_skin: "dirt"
+minimal_mistakes_skin: "air"
 search: true
 
 # Build settings
