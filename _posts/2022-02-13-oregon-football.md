@@ -7,6 +7,8 @@ tags:
   - College Football
 layout: single
 classes: wide
+header:
+  teaser: /assets/images/or_football/unnamed-chunk-31-1.png
 ---
 
 

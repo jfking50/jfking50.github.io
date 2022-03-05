@@ -7,6 +7,8 @@ tags:
   - reinforcement learning
 layout: single
 classes: wide
+header:
+  teaser: /assets/images/ttt.png
 ---
 I've been reading some books on machine learning, and recently started going through <a href="https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1492032646">Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow</a> by Aurélien Géron. His chapter on reinforcement learning is great, and it inspired me to apply some of the methods on my own. I decided to start with the game of tic-tac-toe since it's a little more complicated than a trivial simple example but not as complicated as chess or go.
 

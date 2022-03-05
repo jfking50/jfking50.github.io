@@ -9,6 +9,8 @@ tags:
   - gym
 layout: single
 classes: wide
+header:
+  teaser: /assets/images/mountaincar/mc.png
 ---
 
 A while back, I found OpenAI's <a href="https://gym.openai.com/">Gym environments</a> and immediately wanted to try to solve one of their environments. I didn't really know what I was doing at the time, so I went back to the basics for a better understanding of <a href="https://jfking50.github.io/qlearning/">Q-learning</a> and <a href="https://jfking50.github.io/dqn-ttt/">Deep Q-Networks</a>. Now I think I'm ready to graduate from tic-tac-toe and try a Gym environment again. Best to start simple, though.

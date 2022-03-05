@@ -2,6 +2,8 @@
 layout: single
 title: John King, Amateur, Launches Site
 classes: wide
+header:
+  teaser: /assets/images/hello.png
 ---
 
 And here it is! I'll try a few things.

@@ -11,6 +11,8 @@ tags:
   - GitHub Pages
 layout: single
 classes: wide
+header:
+  teaser: /assets/images/plotly-markdown/unnamed-chunk-2-1.png
 ---
 
 
