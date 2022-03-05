@@ -5,12 +5,13 @@ permalink: /
 header:
   overlay_color: "#000"
   overlay_filter: "0.5"
-  overlay_image: /assets/splash/white_sands.jpg
-excerpt: "Bacon ipsum dolor sit amet salami ham hock ham, hamburger corned beef short ribs kielbasa biltong t-bone drumstick tri-tip tail sirloin pork chop."
+  overlay_image: /assets/splash/white_sands.png
+excerpt: "Eventually my own words will be here, but for now some meat. Bacon ipsum dolor sit amet salami ham hock ham."
 intro:
-  - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
+  - excerpt: 'Here are some more fine words that are centered on the page and can also be *in italics*. Nice!'
 feature_row:
   - image_path: assets/splash/unsplash-volcano.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 1"
     title: "Placeholder 1"
     excerpt: "This is some sample content that goes here with **Markdown** formatting."
