@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: A Random Walk
+logo: "/assets/images/JK_logo2.png"
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Here resides a variety of R and Python scripts for data analysis, data
