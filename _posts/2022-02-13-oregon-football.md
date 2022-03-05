@@ -5,6 +5,8 @@ tags:
   - API
   - Data Visualization
   - College Football
+categories:
+  - Sports Analytics
 layout: single
 classes: wide
 header:
