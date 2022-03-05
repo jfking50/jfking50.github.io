@@ -9,6 +9,8 @@ tags:
   - plotly
   - markdown
   - GitHub Pages
+categories:
+  - GitHub Personal Pages
 layout: single
 classes: wide
 header:
