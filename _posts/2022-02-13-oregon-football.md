@@ -9,6 +9,7 @@ layout: single
 classes: wide
 header:
   teaser: /assets/images/or_football/unnamed-chunk-31-1.png
+excerpt: "I'm not a huge football fan. I can't even remember the last time I watched an NFL game. However, I do sort of follow college football. And being from Oregon, I root for whatever team from Oregon is playing."
 ---
 
 

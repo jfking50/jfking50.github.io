@@ -13,6 +13,7 @@ layout: single
 classes: wide
 header:
   teaser: /assets/images/plotly-markdown/unnamed-chunk-2-1.png
+excerpt: "In a previous post, I created a scatterplot using ggplot2 that displayed college football team logos as the markers using geom_image() from the ggimage package."
 ---
 
 
