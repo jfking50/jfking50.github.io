@@ -4,9 +4,9 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#000"
-  overlay_filter: "0.5"
+  overlay_filter: "0.75"
   overlay_image: /assets/splash/white_sands.png
-excerpt: "A home for some of my data analysis weekend projects on a site I managed to build myself."
+excerpt: "A home I made for some data analysis weekend projects to live in."
 intro:
   - excerpt: "The blog posts are either R or Python scripts that cobble together code I either wrote myself or, as is often the case, borrowed from one of the many more talented people who are kind enough to share their knowledge online. Be aware that *there are almost certainly errors* lurking about my scripts. If you find one, kindly leave a comment."
 feature_row:
