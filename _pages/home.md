@@ -6,44 +6,44 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: /assets/splash/white_sands.png
-excerpt: "Eventually my own words will be here, but for now some meat. Bacon ipsum dolor sit amet salami ham hock ham."
+excerpt: "A home for some of my data analysis weekend projects on a site I managed to build myself."
 intro:
-  - excerpt: 'Here are some more fine words that are centered on the page and can also be *in italics*. Nice!'
+  - excerpt: "The blog posts are either R or Python scripts that cobble together code I either wrote myself or, as is often the case, borrowed from one of the many more talented people who are kind enough to share their knowledge online. Be aware that *there are almost certainly errors* lurking about my scripts. If you find one, kindly leave a comment."
 feature_row:
   - image_path: assets/splash/unsplash-volcano.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Deep Roots"
+    excerpt: "I took my first statistics course while working on a degree in Geology. Some day I'd like to get back to these roots by applying what I've learned in data analytics to geology data sets."
   - image_path: /assets/splash/unsplash-computer.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    title: "Data Analysis"
+    excerpt: "This is what this site is all about. Maybe you'll find something that interests you."
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
   - image_path: /assets/splash/Estacada-XC.jpg
-    title: "Placeholder 3"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-feature_row2:
-  - image_path: /assets/splash/unsplash-moon.jpg
-    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
-    alt: "placeholder image 2"
-    title: "Placeholder Image Left Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-feature_row3:
-  - image_path: /assets/splash/unsplash-lights.jpg
-    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
-    alt: "placeholder image 2"
-    title: "Placeholder Image Right Aligned"
-    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
-    url: "#test-link"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
+    title: "Sports Analytics"
+    excerpt: "Seems like ORSAs eventually either get into the stock market or sports analytics, and, well... even though I'm a runner, I have a few college football posts."
+#feature_row2:
+#  - image_path: /assets/splash/unsplash-moon.jpg
+#    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+#    alt: "placeholder image 2"
+#    title: "Placeholder Image Left Aligned"
+#    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
+#    url: "#test-link"
+#    btn_label: "Read More"
+#    btn_class: "btn--primary"
+#feature_row3:
+#  - image_path: /assets/splash/unsplash-lights.jpg
+#    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+#    alt: "placeholder image 2"
+#    title: "Placeholder Image Right Aligned"
+#    excerpt: 'This is some sample content that goes here with **Markdown** formatting. Right aligned with `type="right"`'
+#    url: "#test-link"
+#    btn_label: "Read More"
+#    btn_class: "btn--primary"
 
 ---
 
