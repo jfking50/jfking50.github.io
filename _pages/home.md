@@ -4,7 +4,7 @@ layout: splash
 permalink: /
 header:
   overlay_color: "#000"
-  overlay_filter: "0.75"
+  overlay_filter: "0.25"
   overlay_image: /assets/splash/white_sands.png
 excerpt: "This site is a home I made for some data analysis weekend projects to live and to get some experience building a website."
 intro:
@@ -54,8 +54,8 @@ feature_row:
 
 {% include feature_row %}
 
-{% include feature_row id="feature_row2" type="left" %}
+#{% include feature_row id="feature_row2" type="left" %}
 
-{% include feature_row id="feature_row3" type="right" %}
+#{% include feature_row id="feature_row3" type="right" %}
 
-{% include feature_row id="feature_row4" type="center" %}
+#{% include feature_row id="feature_row4" type="center" %}
