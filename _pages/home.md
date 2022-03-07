@@ -10,14 +10,9 @@ excerpt: "This site is a home I made for some data analysis weekend projects to 
 intro:
   - excerpt: "The blog posts are either R or Python scripts that cobble together code I either wrote myself or, as is often the case, borrowed from one of the many more talented people who are kind enough to share their knowledge online. Be aware that *there are almost certainly errors* lurking about my scripts. If you find one, kindly leave a comment."
 feature_row:
-  - image_path: assets/splash/unsplash-volcano.jpg
-    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
-    alt: "placeholder image 1"
-    title: "Deep Roots"
-    excerpt: "I took my first statistics course while working on a degree in Geology. Some day I'd like to get back to these roots by applying what I've learned in data analytics to geology data sets."
   - image_path: /assets/splash/unsplash-computer.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
-    alt: "placeholder image 2"
+    alt: "placeholder image 1"
     title: "Data Analysis"
     excerpt: "This is what this site is all about. Maybe you'll find something that interests you."
     url: "https://jfking50.github.io/posts/"
@@ -26,6 +21,14 @@ feature_row:
   - image_path: /assets/splash/Estacada-XC.jpg
     title: "Sports Analytics"
     excerpt: "Seems like ORSAs eventually either get into the stock market or sports analytics, and, well... even though I'm a runner, I have a few college football posts."
+    url: "https://jfking50.github.io/sports%20analytics/oregon-football/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: assets/splash/unsplash-volcano.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "placeholder image 2"
+    title: "Geology"
+    excerpt: "I took my first statistics course while working on a degree in Geology. Some day I'd like to get back to these roots by applying what I've learned in data analytics to geology data sets."
 #feature_row2:
 #  - image_path: /assets/splash/unsplash-moon.jpg
 #    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
