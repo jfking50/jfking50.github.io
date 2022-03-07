@@ -6,7 +6,7 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.75"
   overlay_image: /assets/splash/white_sands.png
-excerpt: "This site is a home I made for some data analysis weekend projects to live (and to get some experience building a website)."
+excerpt: "This site is a home I made for some data analysis weekend projects to live and to get some experience building a website."
 intro:
   - excerpt: "The blog posts are either R or Python scripts that cobble together code I either wrote myself or, as is often the case, borrowed from one of the many more talented people who are kind enough to share their knowledge online. Be aware that *there are almost certainly errors* lurking about my scripts. If you find one, kindly leave a comment."
 feature_row:
@@ -20,7 +20,7 @@ feature_row:
     alt: "placeholder image 2"
     title: "Data Analysis"
     excerpt: "This is what this site is all about. Maybe you'll find something that interests you."
-    url: "#test-link"
+    url: "https://jfking50.github.io/posts/"
     btn_label: "Read More"
     btn_class: "btn--primary"
   - image_path: /assets/splash/Estacada-XC.jpg
