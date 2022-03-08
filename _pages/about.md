@@ -20,4 +20,4 @@ title: "About"
 
 If it's blue, I did stuff there.
 
-![](/assets/images/about/places_visited.png)
+![](/assets/images/about/places_visited.jpg)
