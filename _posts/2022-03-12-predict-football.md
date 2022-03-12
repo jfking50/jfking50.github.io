@@ -12,7 +12,7 @@ categories:
 layout: single
 classes: wide
 header:
-  teaser: /assets/images/predict-football/unnamed-chunk-68-1.png
+  teaser: /assets/images/predict_football/unnamed-chunk-68-1.png
 excerpt: "Continuing with the streak of posts about college football posts, here I finally get into developing some models to predict the winning team and margin of victory of college football games."
 ---
 
@@ -695,7 +695,7 @@ lm_res %>%
   theme(legend.position = "none")
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-29-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-29-1.png)<!-- -->
 
 I have some choices of what do to next. Normally, what I'd do is select the simplest model within one standard error of the model with the lowest RMSE. I can do that with the `select_by_one_std_err()` function as shown below. Note the penalty value for that model and hold that thought.
 
@@ -879,7 +879,7 @@ lm_final_fit %>%
   theme_bw()
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-34-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-34-1.png)<!-- -->
 
 Well, what if we were to make predictions based off of this model? First I'll make a scatter plot of predictions versus actual MOV.
 
@@ -896,7 +896,7 @@ lm_final_fit %>%
        y = "Actual MOV")
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-35-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-35-1.png)<!-- -->
 
 There's a little bit of a trend there, but it looks more like a shotgun blast. Not surprising, though, given the RMSE and R-squared we saw earlier. Let's see what percent of predictions were correct in a head-to-head sense - in other words, what percent predicted just the correct winner.
 
@@ -1000,7 +1000,7 @@ There's a nice `autoplot()` function that comes with `tune` (one of the tidymode
 autoplot(rf_fit) + theme_bw()
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-39-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-39-1.png)<!-- -->
 
 Looks like large numbers of `mtry` are good, but the error flattens out after 50 or so.
 
@@ -1045,7 +1045,7 @@ last_rf_fit %>%
   theme_bw()
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-41-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-41-1.png)<!-- -->
 
 Really only three variables that are contributing much to the model. I'll do predicted versus actual again and hope for less of a shotgun blast.
 
@@ -1062,7 +1062,7 @@ last_rf_fit %>%
        y = "Actual MOV")
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-42-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-42-1.png)<!-- -->
 
 Maybe looks a little more elongated but that could be wishful thinking. How about the percent correct head to head?
 
@@ -1151,7 +1151,7 @@ last_rf_fit %>%
   theme_bw()
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-46-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-46-1.png)<!-- -->
 
 Looks reasonably consistent, so at least I know I fixed that error.
 
@@ -1276,7 +1276,7 @@ last_gbm_fit %>%
   theme_bw()
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-49-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-49-1.png)<!-- -->
 
 Yep, and now accuracy.
 
@@ -1376,7 +1376,7 @@ last_cub_fit %>%
   theme_bw()
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-53-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-53-1.png)<!-- -->
 
 At least with this model, a small number of variables don't dominate the whole thing. Not sure if that's a good or a bad thing in this case. Let's check the Cubist accuracy.
 
@@ -1641,7 +1641,7 @@ last_nn_fit %>%
   theme_bw()
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-63-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-63-1.png)<!-- -->
 
 The model relies heavily on the spread, which makes sense since given that it's hard to beat the spread, and I'm considering only a few other predictors.
 
@@ -1721,7 +1721,7 @@ last_nn_fit %>%
        y = "Actual MOV")
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-67-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-67-1.png)<!-- -->
 
 ### Interpretability Plots
 
@@ -1740,7 +1740,7 @@ autoplot(ex_fit) +
   labs(x = "Game", y = "Predictor")
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-68-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-68-1.png)<!-- -->
 
 Next, for the same 50 games, we see that different predictors are important in different steps. Here we see that spread comes into play mostly in the 7th and 8th step.
 
@@ -1751,7 +1751,7 @@ autoplot(ex_fit, type="steps") +
   labs(x = "Game", y = "Predictor")
 ```
 
-![](/assets/images/predict-football/unnamed-chunk-69-1.png)<!-- -->
+![](/assets/images/predict_football/unnamed-chunk-69-1.png)<!-- -->
 
 ## Next Steps
 
