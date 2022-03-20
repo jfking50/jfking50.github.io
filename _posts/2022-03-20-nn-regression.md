@@ -132,7 +132,7 @@ get_estimate = function(omega0, omega1){nn_reg$x * omega1 + omega0}
 
 There are a number of ways we could do this, but for this example, we'll calculate the loss by determining the mean squared error of the predictions and the target values. Mean squared error is defined as:
 
-<img src="https://render.githubusercontent.com/render/math?math={MSE = \frac{1}{n} \sum\limits_{i=1}^{n}{(y_i - \hat{y}_i)^2}}">
+<img src="https://render.githubusercontent.com/render/math?math={MSE=\frac{1}{n}\sum\limits_{i=1}^{n}{(y_i-\hat{y}_i)^2}}">
 
 
 ```r
