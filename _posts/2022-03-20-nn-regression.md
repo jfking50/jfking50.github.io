@@ -1,5 +1,5 @@
 ---
-title: "Ridge Regression Adjusted Statistics"
+title: "Neural Network Regression"
 tags:
   - R
   - machine learning
@@ -11,7 +11,7 @@ layout: single
 classes: wide
 header:
   teaser: /assets/images/nn_regression/hidden_nn.png
-excerpt: "The idea for this post started off as essentially a replication of this post but using R and Tidymodels instead of Python."
+excerpt: "The following is a subsection of a tutorial I co-authored that I wanted to reproduce here to work out how to get the figures to render properly. Plus, it never hurts to revisit the fundamentals."
 ---
 
 The following is a subsection of a tutorial I co-authored that I wanted to reproduce here to work out how to get the figures to render properly. Plus, it never hurts to revisit the fundamentals.
