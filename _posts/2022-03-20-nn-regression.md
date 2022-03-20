@@ -26,7 +26,7 @@ Like support vector machines and tree-based models, neural networks can be appli
 
 ### Simple Neural Network Model
 
-Before we get into that, let's look at visualization of a neural network regression model in it's simplest form: one to solve for &beta;<sub>0</sub> and &beta;<sub>1</sub> given the equation <img src="https://render.githubusercontent.com/render/math?math={y = \beta_0 x_0 + \beta_1 x_1 + \epsilon}"> where we know x<sub>0</sub> = 1. Below, the two blue circles are referred to as the **input layer** and consist of two **nodes**: an input node that will be used to solve for &beta;<sub>1</sub>, and a bias node to solve for &beta;<sub>0</sub>, the y-intercept. Each node of the input layer is connected to the output layer, which consists of just one node because we'll be predicting a single continuous variable, <img src="https://render.githubusercontent.com/render/math?math={\hat{y}}">. If this was a classification problem, and we were trying to classify the three types of irises found in the `iris` data set, then the output layer would have three nodes, each producing a probability. There is a model parameter, referred to as a **weight**, associated with each connected node as indicated by the &omega;<sub>0</sub> and &omega;<sub>1</sub> terms. The output node produces a prediction, <img src="https://render.githubusercontent.com/render/math?math={\hat{y}}">, using an **activation function**. In the case of linear regression, we use a linear activation function of the form <img src="https://render.githubusercontent.com/render/math?math={f(\sum_{h}{\omega_h}x_h)}">. That's it - that's the model!
+Before we get into that, let's look at visualization of a neural network regression model in it's simplest form: one to solve for &beta;<sub>0</sub> and &beta;<sub>1</sub> given the equation <img src="https://render.githubusercontent.com/render/math?math={y = \beta_0 x_0 %2B \beta_1 x_1 %2B \epsilon}"> where we know x<sub>0</sub> = 1. Below, the two blue circles are referred to as the **input layer** and consist of two **nodes**: an input node that will be used to solve for &beta;<sub>1</sub>, and a bias node to solve for &beta;<sub>0</sub>, the y-intercept. Each node of the input layer is connected to the output layer, which consists of just one node because we'll be predicting a single continuous variable, <img src="https://render.githubusercontent.com/render/math?math={\hat{y}}">. If this was a classification problem, and we were trying to classify the three types of irises found in the `iris` data set, then the output layer would have three nodes, each producing a probability. There is a model parameter, referred to as a **weight**, associated with each connected node as indicated by the &omega;<sub>0</sub> and &omega;<sub>1</sub> terms. The output node produces a prediction, <img src="https://render.githubusercontent.com/render/math?math={\hat{y}}">, using an **activation function**. In the case of linear regression, we use a linear activation function of the form <img src="https://render.githubusercontent.com/render/math?math={f(\sum_{h}{\omega_h}x_h)}">. That's it - that's the model!
 
 ![](/assets/images/nn_regression/simple_nn.png)
 
@@ -34,7 +34,7 @@ Before we get into that, let's look at visualization of a neural network regress
 
 The algorithm used to train the model is called gradient descent, and to demonstrate how it works, we need to set the stage first. Let's assume that we're trying to find the &beta;s that have the following relationship with the predictor:
 
-<img src="https://render.githubusercontent.com/render/math?math={y = 1 + 0.5x + \epsilon}">
+<img src="https://render.githubusercontent.com/render/math?math={y=1%2B0.5x%2B\epsilon}">
 
 We'll create a data set with 10 observations and fit a linear model for comparison later.
 
@@ -439,7 +439,7 @@ We've introduced a new variable &nu;, and a new function *u*. The &nu; variables
 |---------------------|-----------------------------|-------------|
 | Threshold	| <img src="https://render.githubusercontent.com/render/math?math={f(u) = \begin{Bmatrix}1,u>0\\0,u\le0\end{Bmatrix}}"> | Binary |
 | Linear | <img src="https://render.githubusercontent.com/render/math?math={f(u) = u}"> | Numeric |
-| Logistic | <img src="https://render.githubusercontent.com/render/math?math={f(u) = \frac{e^u}{1+e^u}}"> | Numeric Between 0 & 1 |
+| Logistic | <img src="https://render.githubusercontent.com/render/math?math={f(u) = \frac{e^u}{1%2Be^u}}"> | Numeric Between 0 & 1 |
 | Rectified Linear | <img src="https://render.githubusercontent.com/render/math?math={f(u) = \begin{Bmatrix} u, u>0 \\ 0, u\le0 \end{Bmatrix}}"> | Numeric Positive |
 
 
