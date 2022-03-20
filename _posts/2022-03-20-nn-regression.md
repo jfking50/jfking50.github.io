@@ -28,7 +28,7 @@ Like support vector machines and tree-based models, neural networks can be appli
 
 Before we get into that, let's look at visualization of a neural network regression model in it's simplest form: one to solve for &beta;<sub>0</sub> and &beta;<sub>1</sub> given the equation <img src="https://render.githubusercontent.com/render/math?math={y = \beta_0 x_0 + \beta_1 x_1 + \epsilon}"> where we know x<sub>0</sub> = 1. Below, the two blue circles are referred to as the **input layer** and consist of two **nodes**: an input node that will be used to solve for &beta;<sub>1</sub>, and a bias node to solve for &beta;<sub>0</sub>, the y-intercept. Each node of the input layer is connected to the output layer, which consists of just one node because we'll be predicting a single continuous variable, <img src="https://render.githubusercontent.com/render/math?math={\hat{y}}">. If this was a classification problem, and we were trying to classify the three types of irises found in the `iris` data set, then the output layer would have three nodes, each producing a probability. There is a model parameter, referred to as a **weight**, associated with each connected node as indicated by the &omega;<sub>0</sub> and &omega;<sub>1</sub> terms. The output node produces a prediction, <img src="https://render.githubusercontent.com/render/math?math={\hat{y}}">, using an **activation function**. In the case of linear regression, we use a linear activation function of the form <img src="https://render.githubusercontent.com/render/math?math={f(\sum\limits_{h}{\omega_h} x_h)}">. That's it - that's the model!
 
-![](/assets/images/nn_regression/simple_nn.png|width=500px)
+![](/assets/images/nn_regression/simple_nn.png)
 
 ### Gradient Descent
 
@@ -53,7 +53,7 @@ ggplot(nn_reg, aes(x=x, y=y)) +
   theme_bw()
 ```
 
-![](nn_regression_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![](/assets/images/nn_regression/unnamed-chunk-3-1.png)<!-- -->
 
 ```r
 nn.lm = lm(y ~ x, data=nn_reg)
@@ -182,7 +182,7 @@ w1plot = ggplot() +
 gridExtra::grid.arrange(w0plot, w1plot, nrow=1, ncol=2)
 ```
 
-![](nn_regression_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](/assets/images/nn_regression/unnamed-chunk-7-1.png)<!-- -->
 
 In practice, the partial derivatives are calculated as follows:
 
@@ -261,13 +261,7 @@ wHistory = tibble(
 )
 
 library(gganimate)
-```
 
-```
-## Warning: package 'gganimate' was built under R version 4.1.3
-```
-
-```r
 ggplot(wHistory) +
   geom_point(aes(x=iter, y=w0s, color='w_0 Estimate', group=seq_along(iter))) +
   geom_hline(yintercept=coef(nn.lm)[1]) +
@@ -281,7 +275,7 @@ ggplot(wHistory) +
   transition_reveal(iter)
 ```
 
-![](nn_regression_files/figure-html/unnamed-chunk-10-1.gif)<!-- -->
+![](/assets/images/nn_regression/unnamed-chunk-10-1.gif)<!-- -->
 
 To visualize the gradient descent methodology, calculate the loss for a range of &omega;<sub>0</sub> and &omega<sub>1</sub> values and plot the loss function as a surface.
 
@@ -304,7 +298,7 @@ ggplot(wHistory) +
   shadow_wake(wake_length = 0.2)
 ```
 
-![](nn_regression_files/figure-html/unnamed-chunk-11-1.gif)<!-- -->
+![](/assets/images/nn_regression/unnamed-chunk-11-1.gif)<!-- -->
 
 We can also see the regression line update as training progresses.
 
@@ -320,7 +314,7 @@ ggplot(wHistory) +
   labs(title = paste("Gradient Descent Iteration:", "{round(frame_time, 0)}"))
 ```
 
-![](nn_regression_files/figure-html/unnamed-chunk-12-1.gif)<!-- -->
+![](/assets/images/nn_regression/unnamed-chunk-12-1.gif)<!-- -->
 
 Let's compare the final parameter estimates from the neural network model to the linear model coefficients.
 
@@ -437,7 +431,7 @@ In cases like these, neural networks models can be very beneficial. To make that
 
 Neural network models become **universal function approximators** with the addition of one or more hidden layers. Hidden layers fall between the input layer and the output layer. Adding more predictor variables and one hidden layer, we get the following network.
 
-![](/assets/images/nn_regression/hidden_nn.png|width=800px)
+![](/assets/images/nn_regression/hidden_nn.png)
 
 We've introduced a new variable &nu;, and a new function *u*. The &nu; variables are trainable weights just like the *w* variables. The *u* functions are activation functions as described earlier. Typically, all nodes in a hidden layer share a common type of activation function. A variety of activation functions have been developed, a few of which are shown below. For many applications, a rectified linear, activation function is a good choice for hidden layers.
 
@@ -462,7 +456,7 @@ ggplot(exa) +
   theme_bw()
 ```
 
-![](nn_regression_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](/assets/images/nn_regression/unnamed-chunk-18-1.png)<!-- -->
 
 To fit a linear model with a 10-node hidden layer, we specify `size = 10`, and since 100 iterations might not be enough to converge, we'll increase `maxit` to 500. Otherwise, everything else is the same. With 2 nodes in the input layer (1 for the bias, 1 for x) and 11 nodes in the hidden layer (1 for the bias, and 10 for those we specified), the model will have 31 weights to train.  
 
@@ -522,7 +516,7 @@ ggplot() +
   theme_bw()
 ```
 
-![](nn_regression_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](/assets/images/nn_regression/unnamed-chunk-20-1.png)<!-- -->
 
 The plot above indicates the model over fit the data somewhat, although we only know this because we have the benefit of knowing the true function. We could reduce the amount of over fitting by choosing different hyperparameter values (decay, or the number of hidden layer nodes) or by changing the default training stopping criteria.
 
@@ -633,15 +627,8 @@ cvms::plot_confusion_matrix(iris_cm$`Confusion Matrix`[[1]], add_zero_shading = 
   ggtitle("Neural Network Confusion Matrix")
 ```
 
-```
-## Warning in cvms::plot_confusion_matrix(iris_cm$`Confusion Matrix`[[1]], : 'rsvg'
-## is missing. Will not plot arrows and zero-shading.
-```
+![](/assets/images/nn_regression/unnamed-chunk-24-1.png)<!-- -->
 
-![](nn_regression_files/figure-html/unnamed-chunk-24-1.png)<!-- -->
+[^1]: Warren S. McCulloch, Walter H. Pitts. 1943. “A Logical Calculus of the Ideas Immanent in Nervous Activity.” Bulletin of Mathematical Biophysics 5.
 
-[^1]: Warren S. McCulloch, Walter H. Pitts. 1943. “A Logical Calculus of the Ideas Immanent
-  in Nervous Activity.” Bulletin of Mathematical Biophysics 5.
-
-[^2]: David E. Rumelhart, James L. McClelland. 1986. Parallel Distributed Processing. MIT Press.
-  Bishop, Christopher. 1995. Neural Networks for Pattern Recognition. Oxford University Press.
+[^2]: David E. Rumelhart, James L. McClelland. 1986. Parallel Distributed Processing. MIT Press. Bishop, Christopher. 1995. Neural Networks for Pattern Recognition. Oxford University Press.
