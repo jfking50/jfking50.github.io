@@ -6,7 +6,7 @@ tags:
   - AI
   - ggplot
 categories:
-  - General analysis
+  - General Analysis
 layout: single
 classes: wide
 header:
