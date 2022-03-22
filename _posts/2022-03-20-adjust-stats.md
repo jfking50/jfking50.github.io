@@ -321,27 +321,51 @@ df <-
 df <- df %>% left_join(fbs %>% select(school, logo), by = c("team" = "school"))
 ```
 
-To generate the plots with team logos, I use `geom_image()`, and the last 5 lines are used by `gganimate` in a later code chunk. This black of code is fast to execute.
+To generate the plots with team names, I use `geom_label()`. I then specify how the frame transitions shold work and then generate the plot. This black of code took about two minutes to execute.
 
 
 ```r
-stats_plot <-
-  ggplot(df, aes(x=adjOff, y=adjDef)) +
-  geom_image(aes(image = logo, group = seq_along(logo))) +
-  theme_bw() +
+# generate the basic plot
+p <- ggplot(df, aes(x=adjOff, y=adjDef)) + 
+  geom_label(aes(label=team), fill = df$color, color = df$alt_color, vjust=0.5, hjust=0.5) +
   scale_y_reverse() +
   xlab("Adjusted Offense") +
   ylab("Adjusted Defense") +
-  ggtitle("Week {closest_state}") +
-  transition_states(week, transition_length = 2, state_length = 1, wrap = FALSE) +
-  ease_aes("linear")
-```
+  theme_bw() +
+  theme(legend.position="none")
 
-Finally I'll create the animated gif. It took my laptop about 15 minutes to generate the graphic. One thing that could be improved for efficiency is that the `logo` column contains urls for the team logos. There are 130 logos and 16 weeks (including week 0), so I'm getting the same 130 logos 16 times when I should only need to get them once. I haven't worked out how to solve that yet, but for now at least I have something that works.
+# specify animation details
+anim <- p + transition_states(week,
+                      transition_length = 2,
+                      state_length = 2,
+                      wrap = FALSE) +
+  ease_aes('cubic-in-out') +
+  ggtitle('Week {closest_state}')
+
+animate(anim, width = 800, height = 800, end_pause = 20, fps = 20, duration = 15)
+```
+![](/assets/images/adjust_stats/weekly_label.gif)<!-- -->
+
+Second, I'll use team logos instead of text labels. It took an AWS t2.medium  EC2 instance about 45 minutes to generate the graphic. One thing that could be improved for efficiency is that the `logo` column contains urls for the team logos. There are 130 logos and 16 weeks (including week 0), so I'm getting the same 130 logos 16 times when I should only need to get them once. I haven't worked out how to solve that yet, but for now at least I have something that works.
 
 
 ```r
-animate(stats_plot, width = 800, height = 800, fps = 10, end_pause = 10)
+p2 <- ggplot(df, aes(x=adjOff, y=adjDef)) + 
+  geom_image(aes(image=logo)) +
+  scale_y_reverse() +
+  xlab("Adjusted Offense") +
+  ylab("Adjusted Defense") +
+  theme_bw() +
+  theme(legend.position="none")
+
+anim2 <- p2 + transition_states(week,
+                              transition_length = 2,
+                              state_length = 2,
+                              wrap = FALSE) +
+  ease_aes('cubic-in-out') +
+  ggtitle('Week {closest_state}')
+
+animate(anim2, width = 800, height = 800, end_pause = 20, fps = 20, duration = 15)
 ```
 
-![](/assets/images/adjust_stats/unnamed-chunk-8-1.gif)<!-- -->
+![](/assets/images/adjust_stats/weekly_logo.gif)<!-- -->
