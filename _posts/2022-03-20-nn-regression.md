@@ -278,7 +278,7 @@ ggplot(wHistory) +
 
 ![](/assets/images/nn_regression/unnamed-chunk-10-1.gif)<!-- -->
 
-To visualize the gradient descent methodology, calculate the loss for a range of &omega;<sub>0</sub> and &omega<sub>1</sub> values and plot the loss function as a surface.
+To visualize the gradient descent methodology, calculate the loss for a range of &omega;<sub>0</sub> and &omega;<sub>1</sub> values and plot the loss function as a surface.
 
 
 ```r
