@@ -5,6 +5,7 @@ tags:
   - machine learning
   - AI
   - regression
+  - neural network
 categories:
   - General Analysis
 layout: single

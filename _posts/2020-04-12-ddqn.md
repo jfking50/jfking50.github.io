@@ -7,6 +7,7 @@ tags:
   - tensorflow
   - OpenAI
   - gym
+  - neural network
 layout: single
 classes: wide
 header:

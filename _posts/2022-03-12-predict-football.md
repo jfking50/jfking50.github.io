@@ -8,6 +8,7 @@ tags:
   - predictive modeling
   - machine learning
   - tidymodels
+  - neural network
 categories:
   - Sports Analytics
 layout: single
