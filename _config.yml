@@ -33,7 +33,7 @@ permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /blog/page:num
 timezone: America/New_York
-url: "https://jfking50.github.iom" # the base hostname & protocol for your site
+url: "https://jfking50.github.io" # the base hostname & protocol for your site
 
 include:
   - _pages
