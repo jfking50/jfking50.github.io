@@ -3,8 +3,9 @@ title: "Oregon Football"
 tags:
   - R
   - API
-  - Data Visualization
-  - College Football
+  - data visualization
+  - college football
+  - regression
 categories:
   - Sports Analytics
 layout: single

@@ -4,9 +4,10 @@ tags:
   - R
   - API
   - data visualization
-  - College Football
+  - college football
   - predictive modeling
   - machine learning
+  - tidymodels
 categories:
   - Sports Analytics
 layout: single

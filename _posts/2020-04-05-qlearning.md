@@ -1,7 +1,7 @@
 ---
 title: Q-Learning
 tags:
-  - Python
+  - python
   - AI
   - machine learning
   - reinforcement learning

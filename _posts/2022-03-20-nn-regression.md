@@ -4,7 +4,7 @@ tags:
   - R
   - machine learning
   - AI
-  - ggplot
+  - regression
 categories:
   - General Analysis
 layout: single

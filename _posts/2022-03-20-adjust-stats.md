@@ -4,8 +4,10 @@ tags:
   - R
   - API
   - data visualization
-  - College Football
-  - ggplot
+  - college football
+  - ggplot2
+  - regression
+  - tidymodels
 categories:
   - Sports Analytics
 layout: single
@@ -326,7 +328,7 @@ To generate the plots with team names, I use `geom_label()`. I then specify how 
 
 ```r
 # generate the basic plot
-p <- ggplot(df, aes(x=adjOff, y=adjDef)) + 
+p <- ggplot(df, aes(x=adjOff, y=adjDef)) +
   geom_label(aes(label=team), fill = df$color, color = df$alt_color, vjust=0.5, hjust=0.5) +
   scale_y_reverse() +
   xlab("Adjusted Offense") +
@@ -350,7 +352,7 @@ Second, I'll use team logos instead of text labels. It took an AWS t2.medium  EC
 
 
 ```r
-p2 <- ggplot(df, aes(x=adjOff, y=adjDef)) + 
+p2 <- ggplot(df, aes(x=adjOff, y=adjDef)) +
   geom_image(aes(image=logo)) +
   scale_y_reverse() +
   xlab("Adjusted Offense") +

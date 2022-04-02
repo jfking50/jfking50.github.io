@@ -3,8 +3,8 @@ title: "Plotly & Markdown"
 tags:
   - R
   - API
-  - Data Visualization
-  - College Football
+  - data visualization
+  - college football
   - ggplot2
   - plotly
   - markdown

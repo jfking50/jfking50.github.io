@@ -1,7 +1,7 @@
 ---
 title: "Driving Up A Mountain"
 tags:
-  - Python
+  - python
   - reinforcement learning
   - AI
   - tensorflow
