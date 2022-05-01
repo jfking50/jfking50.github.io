@@ -24,11 +24,14 @@ feature_row:
     url: "https://jfking50.github.io/sports%20analytics/oregon-football/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: assets/splash/unsplash-volcano.jpg
+  - image_path: assets/splash/unsplash-lights.jpg
     image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
     alt: "placeholder image 2"
-    title: "Geology"
-    excerpt: "I took my first statistics course while working on a degree in Geology. Some day I'd like to get back to these roots by applying what I've learned in data analytics to geology data sets."
+    title: "Generative Art"
+    excerpt: "Making art based on math is challenging and fun."
+    url: "https://jfking50.github.io/generative%20art/collatz/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
 #feature_row2:
 #  - image_path: /assets/splash/unsplash-moon.jpg
 #    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
