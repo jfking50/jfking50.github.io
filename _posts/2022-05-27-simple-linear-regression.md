@@ -1,10 +1,16 @@
 ---
-title: "SLR"
-author: "John King"
-date: "5/27/2022"
-output:
-  html_document:
-    keep_md: true
+title: "Simple Linear Regression"
+tags:
+  - R
+  - machine learning
+  - AI
+  - regression
+categories:
+  - Data Analysis Fundamentals
+layout: single
+classes: wide
+header:
+  teaser: /assets/images/slr/unnamed-chunk-9-1.png
 ---
 
 
