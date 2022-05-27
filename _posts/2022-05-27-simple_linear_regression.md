@@ -15,7 +15,9 @@ header:
 
 The purpose of regression is to describe a relationship that explains one variable (the *response*, or the "y" variable) based on one or more other variables (the *predictors*, or the "x" variables). The simplest deterministic mathematical relationship between two variables *x* and *y* is a linear relationship, which we define as:
 
-<img src="https://render.githubusercontent.com/render/math?math={y=\beta_0%2B\beta_1x%2B\epsilon}">
+with and
+
+<img src="https://render.githubusercontent.com/render/math?math={y=\beta_0&#43;\beta_1x&#43;\epsilon}">
 
 where,
 
