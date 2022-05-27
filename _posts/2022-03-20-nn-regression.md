@@ -7,7 +7,7 @@ tags:
   - regression
   - neural network
 categories:
-  - General Analysis
+  - Data Analysis Fundamentals
 layout: single
 classes: wide
 header:

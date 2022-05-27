@@ -13,17 +13,15 @@ header:
   teaser: /assets/images/slr/unnamed-chunk-9-1.png
 ---
 
-
-
 The purpose of regression is to describe a relationship that explains one variable (the *response*, or the "y" variable) based on one or more other variables (the *predictors*, or the "x" variables). The simplest deterministic mathematical relationship between two variables *x* and *y* is a linear relationship, which we define as:
 
-<img src="https://render.githubusercontent.com/render/math?math={y = \beta_{0} + \beta_{1}x + \varepsilon}">
+<img src="https://render.githubusercontent.com/render/math?math={y = \beta_0 %2B \beta_1 x %2B \epsilon}">
 
 where,
 
-* <img src="https://render.githubusercontent.com/render/math?math={\beta_{0}}"> is the y-intercept
-* <img src="https://render.githubusercontent.com/render/math?math={\beta_{1}}"> is the slope
-* <img src="https://render.githubusercontent.com/render/math?math={\varepsilon}"> is the error in *y* not explained by <img src="https://render.githubusercontent.com/render/math?math={\beta_{0}}"> and <img src="https://render.githubusercontent.com/render/math?math={\beta_{1}}">.
+* &beta;<sub>0</sub> is the y-intercept
+* &beta;<sub>1</sub> is the slope
+* &epsilon; is the error in *y* not explained by &beta;<sub>0</sub> and &beta;<sub>1</sub>.
 
 If there is no error in the model and a linear relationship exists, we could predict the true value of y given any value of x. With error, however, we can only estimate y, which we annotate by <img src="https://render.githubusercontent.com/render/math?math={\hat{y}}">. The regression line itself is determined using the *least squares* method, which involves drawing a line through the centroid of the data, and adjusting the slope until the squared distance between the straight line and each observed value (the *residual*) is minimized. For example, assume we have the following observations of height in inches (predictor) and weight in pounds (response).
 
