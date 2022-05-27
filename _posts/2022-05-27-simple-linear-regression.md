@@ -43,7 +43,7 @@ df = tibble(
 
 The centroid coordinates $(\bar{x},\bar{y})$ are calculated simply by $\bar{x}$ = `mean(df$height)` = 59.33, and $\bar{y}$ = `mean(df$weight)` = 137.83. Plotting the data with the centroid, we get:
 
-![](assets/images/slr/unnamed-chunk-2-1.png)<!-- -->
+![](/assets/images/slr/unnamed-chunk-2-1.png)<!-- -->
 
 To find the slope, $\beta_{1}$, we calculate how much each height and weight observation deviate from the centroid, multiply those paired deviations, sum them, and divide that by the sums of the squared height deviations. With the height and weight data, we find:
 
@@ -113,7 +113,7 @@ ggplot(data=df, aes(x=height, y=weight)) +
   theme_bw()
 ```
 
-![](assets/images/slr/unnamed-chunk-6-1.png)<!-- -->
+![](/assets/images/slr/unnamed-chunk-6-1.png)<!-- -->
 
 
 This method minimizes the residual sum of squares (RSS), which is represented mathematically by:
@@ -166,7 +166,7 @@ We calculate $R^2$ for the height/weight data as follows:
 
 We interpret $R^2$ as the proportion of weight variation explained by the linear model. As a proportion, $R^2$ varies from 0 to 1, and ideally we seek models with a high $R^2$. A graphical depiction of RSS and TSS for one of the residuals illustrates their relationship.
 
-![](assets/images/slr/unnamed-chunk-9-1.png)<!-- -->
+![](/assets/images/slr/unnamed-chunk-9-1.png)<!-- -->
 
 ### Least Squares Method In *R*
 
@@ -286,4 +286,4 @@ ggplot(data = df, aes(x = height, y = weight)) + # Provide your data and aesthet
   geom_smooth(method = 'lm', se = T, formula = "y ~ x")
 ```
 
-![](assets/images/slr/unnamed-chunk-13-1.png)<!-- -->
+![](/assets/images/slr/unnamed-chunk-13-1.png)<!-- -->
