@@ -18,6 +18,6 @@ title: "About"
 
 ### Traveling Stuff
 
-If it's blue, I did stuff there.
+If it's dark blue, I did stuff there. If medium blue, then just an airport layover.
 
-![](/assets/images/about/places_visited.jpg)
+<iframe src="/assets/images/about/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>

@@ -201,7 +201,7 @@ htmlwidgets::saveWidget(
   libdir = "/assets/images/plotly-markdown/lib")
 ```
 
-Finally, in a markdown portion of the file (not a code chunk), I can use this to render the plot:
+Then, open the html file in a text editor and delete the first line: <!DOCTYPE html>. Finally, in a markdown portion of the file (not a code chunk), I can use this to render the plot:
 
 ```
 <iframe src="/assets/images/plotly-markdown/p1.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
