@@ -22,4 +22,4 @@ classes: wide
 
 If it's dark blue, I did stuff there. If medium blue, then just an airport layover.
 
-<iframe src="/assets/images/about/map.html" width="100%" height="800" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
+<iframe src="/assets/images/about/map.html" width="100%" height="400" id="igraph" scrolling="no" seamless="seamless" frameBorder="0"> </iframe>
